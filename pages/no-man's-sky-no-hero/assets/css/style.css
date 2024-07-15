@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.hero {
+  background-color: aqua;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+}
+
+.features {
+  background-color: white;
+  height: fit-content;
+
+  & .feature {
+    position: relative;
+    height: 70dvh;
+    z-index: 1;
+
+    &.explore {
+      object-position: top;
+      background: url("../img/explore-wallpaper.jpg");
+    }
+
+    &.build {
+      background: url("../img/build-wallpaper.png");
+    }
+
+    &.multiplayer {
+      background: url("../img/multiplayer-wallpaper.webp");
+      background-repeat: no-repeat;
+      background-size: 100%;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: inherit;
+      width: 100%;
+      z-index: -1;
+    }
+
+    &.left::before {
+      background: linear-gradient(
+        153deg,
+        rgba(0, 0, 0, 1) 1%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+
+    &.right::before {
+      background: linear-gradient(
+        227deg,
+        rgba(0, 0, 0, 1) 1%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
+
+    & .content {
+      display: flex;
+      flex-direction: column;
+      width: 80dvw;
+      padding: 6rem 10rem;
+      gap: 1rem;
+
+      & h3 {
+        color: white;
+        font-size: 4rem;
+        font-weight: 500;
+        letter-spacing: 1rem;
+      }
+
+      & .description {
+        color: rgb(255, 255, 255);
+        width: 60%;
+        text-align: justify;
+        text-justify: inter-word;
+      }
+    }
+
+    &.right .content {
+      margin-left: auto;
+      align-items: flex-end;
+    }
+  }
+}

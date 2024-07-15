@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-behavior: smooth;
+}
+
+header {
+  & img {
+    position: absolute;
+    z-index: 100;
+    height: 50px;
+    aspect-ratio: 1/1;
+    padding-top: 2rem;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: calc(100dvh - 5rem);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 5rem;
+  background-color: whitesmoke;
+
+  & h1 {
+    width: 40%;
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  & .content {
+    display: flex;
+    height: fit-content;
+    width: 40%;
+    border: 1px solid black;
+    border-left: none;
+    border-right: none;
+    padding: 2rem 0;
+    gap: 2rem;
+
+    & .left {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 65%;
+
+      & h2 {
+        font-size: 2rem;
+      }
+
+      & .sign {
+        font-family: "Playwrite NZ", cursive;
+        font-size: 1.5rem;
+      }
+    }
+
+    & .right {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+      width: 25%;
+      gap: 2rem;
+
+      & .id-code {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1.3rem;
+      }
+
+      & img {
+        width: 100%;
+      }
+
+      & .date {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  & .bottom {
+    width: 40%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 0;
+
+    & .moto {
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 800;
+      font-size: 1.3rem;
+    }
+
+    & img {
+      height: 23rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: 0 -19rem;
+    }
+  }
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 3rem;
+
+  & h3 {
+    font-size: 3rem;
+  }
+
+  & .cards-container {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+
+    & .card {
+      border-radius: 5px;
+      width: 15rem;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: all ease 0.5s;
+
+      & img {
+        height: 20rem;
+        width: 15rem;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: all ease 0.5s;
+      }
+
+      & .content {
+        position: absolute;
+        width: 15rem;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          10deg,
+          rgba(0, 0, 0, 0.577) 35%,
+          rgba(255, 255, 255, 0) 78%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        bottom: -6rem;
+        padding: 1rem;
+        opacity: 0;
+        transition: all ease 0.5s;
+        color: white;
+
+        & h4 {
+          font-size: 1.5rem;
+          padding: 0 1rem;
+        }
+
+        & p {
+          color: white;
+          text-indent: 2rem;
+          text-align: justify;
+          text-justify: inter-word;
+          overflow: hidden;
+          padding: 0 1rem;
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+      }
+
+      &:hover {
+        background-color: gray;
+
+        & img {
+          scale: 0.9;
+          opacity: 0.4;
+        }
+
+        & .content {
+          bottom: 0;
+          opacity: 1;
+          filter: brightness(1);
+        }
+      }
+    }
+  }
+}
